@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const initialLoginForm = {email: '', password: ''};
 
@@ -13,8 +14,13 @@ const LoginPage = () => {
     return(
         <>
             <div>Login page</div>
-            <Input onChange={onLoginFormChange} value={loginForm.email} fieldName='email'/>
-            <Input onChange={onLoginFormChange} value={loginForm.password} fieldName='password'/>
+            <section className='login'>
+                <div className='container'>
+                    <Input onChange={onLoginFormChange} value={loginForm.email} fieldName='email' className='input input-email'/>
+                    <Input onChange={onLoginFormChange} value={loginForm.password} fieldName='password' className='input input-pass'/>
+                    <Button type='button' text='Login' className='btn-login'/>
+                </div>
+            </section>
         </>
     )
 }
