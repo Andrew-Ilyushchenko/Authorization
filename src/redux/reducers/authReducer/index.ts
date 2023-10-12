@@ -1,4 +1,5 @@
 import { Reducer } from "redux";
+import { AuthActionType } from "../../actions/authActionCreators";
 
 interface IInitialAuthState {
     data: any,
@@ -14,7 +15,7 @@ const initialState: IInitialAuthState = {
     isAuth: false
 }
 
-const authReducer: Reducer<IInitialAuthState ,any> = (state = initialState, action) => {
+const authReducer: Reducer<IInitialAuthState , AuthActionType> = (state = initialState, action) => {
     switch(action.type) {
         default:
             return state;
